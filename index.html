@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Video streaming</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #004882;
+      }
+
+      .box {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+
+
+        transform: translate(-50%, -50%);
+      }
+
+      .box select {
+        background-color: #0563af;
+        color: white;
+        padding: 12px;
+        width: 250px;
+        border: none;
+        font-size: 20px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        -webkit-appearance: button;
+        appearance: button;
+        outline: none;
+      }
+
+      .box::before {
+        content: "\f13a";
+        font-family: FontAwesome;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        font-size: 28px;
+        line-height: 45px;
+        color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.1);
+        pointer-events: none;
+      }
+
+      .box:hover::before {
+        color: rgba(255, 255, 255, 0.6);
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .box select option {
+        padding: 30px;
+      }
+      </style>
+  </head>
+<body>
+      <!-- dropdown list to choose the video and there is an on change function that is triggered once the dropdown list option is changed -->
+      <!-- <div class="top-left"> -->
+        <div class="box">
+
+      <select  name="select" id="select" onchange="window.changeSrc(this);">
+             <!-- options for the video selection (dropdown list) that has a value of the video file name without .mp4 -->
+            <!-- <option value="JohnFish">Video1 </option> -->
+            <!-- <option value="scottpilgrim">Video2</option> -->
+            <!-- <option value="lightleaks">Video3</option> -->
+             <option value="bigbuck">Video3</option>
+        </select>
+      </div>
+
+      <!-- </div> -->
+      <!-- videoplayer that calls the rest api with source that changes according to the on change function -->
+      <video id="videoPlayer" src="" width="1080px" 
+      controls></video>
+      
+       <!-- JS code that changes the videoplayer source with the selected value from dropdown list -->-
+      <script>
+        window.changeSrc = function(selectValue) {
+            document.getElementById("videoPlayer").src = selectValue.value;
+        }
+        window.changeSrc(document.getElementById('select'));
+      </script>
+</body>
+</html>

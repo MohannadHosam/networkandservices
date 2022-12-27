@@ -1,0 +1,21 @@
+{
+  "name": "network-and-services-project",
+  "version": "1.0.0",
+  "main": "network and services project.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "glob": "^8.0.3",
+    "nodemon": "^2.0.20",
+    "tsd": "^0.25.0"
+  },
+  "keywords": [],
+  "description": ""
+}
